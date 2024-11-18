@@ -1,35 +1,42 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/electron-vite.animate.svg';
-import './App.css';
+// import { useState } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+// import IconButton from '@mui/material/IconButton';
+// import MenuIcon from '@mui/icons-material/Menu';
+import { prettying_text_white } from './assets';
+import styled from '@emotion/styled';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <a href="https://electron-vite.github.io" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          {/*<IconButton*/}
+          {/*  size="large"*/}
+          {/*  edge="start"*/}
+          {/*  color="inherit"*/}
+          {/*  aria-label="menu"*/}
+          {/*  sx={{ mr: 2 }}*/}
+          {/*>*/}
+          {/*  <MenuIcon />*/}
+          {/*</IconButton>*/}
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <LOGO src={prettying_text_white} alt="logo" height="30px" />
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
+
+const LOGO = styled.img`
+  position: relative;
+  bottom: -5px;
+  margin-right: 10px;
+`;
 
 export default App;
